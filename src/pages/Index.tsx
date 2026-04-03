@@ -1,50 +1,38 @@
-import { Download, FileText, Package, Smartphone, Zap } from "lucide-react";
+import { Download, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 interface FileItem {
   name: string;
   description: string;
-  size: string;
   url: string;
-  icon: React.ReactNode;
+  icon: string;
 }
 
 const files: FileItem[] = [
   {
-    name: "MyApp_v1.2.apk",
-    description: "Android application package",
-    size: "24.5 MB",
-    url: "#",
-    icon: <Smartphone className="h-5 w-5" />,
+    name: "Spotify Plus",
+    description: "No ads",
+    url: "https://github.com/88411/sidestoresideloading/releases/download/idk/Spotify.ipa",
+    icon: "https://i.imgur.com/ZHIpWi5.png",
   },
   {
-    name: "MyApp_v1.2.ipa",
-    description: "iOS application package",
-    size: "31.2 MB",
-    url: "#",
-    icon: <Package className="h-5 w-5" />,
-  },
-  {
-    name: "README.txt",
-    description: "Installation instructions",
-    size: "2 KB",
-    url: "#",
-    icon: <FileText className="h-5 w-5" />,
+    name: "YouTube Plus",
+    description: "No ads",
+    url: "https://github.com/88411/sidestoresideloading/releases/download/idk/YouTube.ipa",
+    icon: "https://i.pinimg.com/736x/96/9c/1f/969c1fc84ff0fe941ec48b618f9fbaaf.jpg",
   },
 ];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Animated gradient background blobs */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px] animate-pulse" />
         <div className="absolute -bottom-40 -right-40 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[120px] animate-pulse [animation-delay:1s]" />
       </div>
 
       <div className="relative mx-auto max-w-xl px-4 py-20">
-        {/* Header */}
         <div className="mb-10 flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary">
             <Zap className="h-5 w-5" />
@@ -59,7 +47,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* File list */}
         <div className="space-y-3">
           {files.map((file) => (
             <Card
@@ -68,13 +55,15 @@ const Index = () => {
             >
               <CardContent className="flex items-center justify-between p-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
-                    {file.icon}
-                  </div>
+                  <img
+                    src={file.icon}
+                    alt={file.name}
+                    className="h-12 w-12 rounded-xl object-cover"
+                  />
                   <div>
                     <p className="font-medium text-foreground">{file.name}</p>
                     <p className="text-sm text-muted-foreground">
-                      {file.description} · {file.size}
+                      {file.description}
                     </p>
                   </div>
                 </div>
