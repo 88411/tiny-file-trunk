@@ -1,7 +1,6 @@
 import { Download, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import liveContainerIcon from "@/assets/livecontainer.png.asset.json";
 
 interface FileItem {
   name: string;
@@ -27,7 +26,7 @@ const files: FileItem[] = [
     name: "LiveContainer",
     description: "Run apps without installing",
     url: "https://github.com/88411/Livecontainer/raw/refs/heads/main/LiveContainer.ipa",
-    icon: liveContainerIcon.url,
+    icon: "https://tiny-file-trunk.lovable.app/__l5e/assets-v1/1ef3df02-4936-4010-870a-d6eaa461fdf4/livecontainer.png",
   },
 ];
 
