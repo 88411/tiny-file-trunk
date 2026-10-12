@@ -1,6 +1,7 @@
 import { Download, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import liveContainerIcon from "@/assets/livecontainer.png.asset.json";
 
 interface FileItem {
   name: string;
@@ -21,6 +22,12 @@ const files: FileItem[] = [
     description: "No ads",
     url: "https://github.com/88411/sidestoresideloading/releases/download/idk/YouTube.ipa",
     icon: "https://i.pinimg.com/736x/96/9c/1f/969c1fc84ff0fe941ec48b618f9fbaaf.jpg",
+  },
+  {
+    name: "LiveContainer",
+    description: "Run apps without installing",
+    url: "https://github.com/88411/Livecontainer/raw/refs/heads/main/LiveContainer.ipa",
+    icon: liveContainerIcon.url,
   },
 ];
 
@@ -83,7 +90,7 @@ const Index = () => {
         </div>
 
         <p className="mt-8 text-center text-xs text-muted-foreground/60">
-          All files are provided as-is. Install at your own risk.
+          All apps are not flagged by Apple as of October 2026 and do NOT get your provisioning profile banned.
         </p>
       </div>
     </div>
